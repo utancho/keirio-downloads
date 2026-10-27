@@ -1,0 +1,27 @@
+name: Build Mac downloads from verified Windows distribution
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        required: true
+        type: string
+      sha256:
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  mac:
+    timeout-minutes: 20
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+      - run: node build-mac.mjs
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+          WINDOWS_SHA256: ${{ inputs.sha256 }}
+          GH_TOKEN: ${{ github.token }}
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
