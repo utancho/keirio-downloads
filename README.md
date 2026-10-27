@@ -1,2 +1,11 @@
-# keirio-downloads
-KEIRIO desktop downloads and binary packaging. Accounting application source is private.
+# KEIRIO 0.2.0 — デスクトップ プレビュー版
+
+[ダウンロードと導入手順](https://keirio-hub.com/download)
+
+Windows x64・Mac Apple Silicon・Mac Intelの配布アプリからログイン画面表示とNode隔離を確認しています。インターネット接続が必要で、Web版と同じアカウント・契約・機能範囲を使用します。会計業務全体の実装完了を意味しません。
+
+開発元のコード署名・Apple公証はありません。OSから警告が出る場合があります。OSの保護機能を無効化せず、不明な場合はブラウザ版をご利用ください。Macはアドホック署名のみです。インストール/アンインストール、各対応OSの全バージョンでの動作は未確認です。
+
+公開バイナリの匿名取得とSHA-256一致を検証済みです。照合値はSHA256SUMS.txtを参照してください。自動アップデートはありません。
+
+このリポジトリには配布物とパッケージング/検証のスクリプトだけを置きます。会計Webアプリ本体のソース、顧客データ、認証情報は含みません。
